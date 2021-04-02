@@ -8,6 +8,6 @@ ENV NGINX_DOCROOT_IN_REPO="public"
 
 USER gitpod
 
-RUN apt-get update \
- && apt-get -y install php7.4-fpm \
- && apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
+RUN sudo apt-get update \
+ && sudo apt-get -y install php7.4-fpm \
+ && sudo apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
