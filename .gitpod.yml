@@ -9,10 +9,9 @@ tasks:
   command: >
     echo "";
     echo "Commands you can try:";
-    echo " * nginx";
-    echo " * nginx -s stop";
-    echo " * nginx -s reload";
-    echo " * nginx && multitail /var/log/nginx/access.log -I /var/log/nginx/error.log" & /usr/sbin/php-fpm7.2 --fpm-config php-fpm.conf";
-    echo " * gp open /etc/nginx/nginx.conf";
-    echo " * gp open /var/log/nginx/access.log";
-    echo " * gp open /var/log/nginx/error.log";
+    echo "Start nginx with php-fpm7.4 and multitail";
+    echo -e "\t nginx & /usr/sbin/php-fpm7.4 --fpm-config php-fpm.conf && multitail /var/log/nginx/access.log -I /var/log/nginx/error.log";
+    echo "Stop nginx and php-fpm7.4 and multitail";
+    echo -e "\t nginx -s stop && pkill php-fpm && pkill multitail"
+    echo "Reload nginx"
+    echo -e "\t nginx -s reload"
