@@ -6,7 +6,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # optional: change document root folder. It's relative to your git working copy.
 ENV NGINX_DOCROOT_IN_REPO="public"
 
-USER root
+USER gitpod
 
 RUN apt-get update \
  && apt-get -y install php7.4-fpm \
