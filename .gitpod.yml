@@ -2,7 +2,7 @@ image:
   file: .gitpod.dockerfile
   context: nginx
 ports:
-- port: 8080
+- port: 8002
   onOpen: open-preview
 tasks:
 - name: Terminal
@@ -12,10 +12,7 @@ tasks:
     echo " * nginx";
     echo " * nginx -s stop";
     echo " * nginx -s reload";
+    echo " * nginx && multitail /var/log/nginx/access.log -I /var/log/nginx/error.log";
     echo " * gp open /etc/nginx/nginx.conf";
     echo " * gp open /var/log/nginx/access.log";
     echo " * gp open /var/log/nginx/error.log";
-- name: Nginx
-  command: >
-    nginx &&
-    multitail /var/log/nginx/access.log -I /var/log/nginx/error.log
