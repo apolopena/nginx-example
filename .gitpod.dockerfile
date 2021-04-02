@@ -9,3 +9,6 @@ ENV NGINX_DOCROOT_IN_REPO="public"
 # php7.4-fpm required for Nginx to server PHP pages.
 RUN sudo apt-get update -q \
     && sudo apt-get install -y php7.4-fpm
+
+RUN chown -R gitpod:gitpod /etc/php \
+    && touch /var/log/php7.4-fpm.log
