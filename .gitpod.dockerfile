@@ -10,5 +10,8 @@ ENV NGINX_DOCROOT_IN_REPO="public"
 RUN sudo apt-get update -q \
     && sudo apt-get install -y php7.4-fpm
 
-RUN sudo chown -R gitpod:gitpod /etc/php \
-    && touch /var/log/php7.4-fpm.log
+USER root
+
+RUN chown -R gitpod:gitpod /etc/php \
+    && touch /var/log/php7.4-fpm.log \
+    chown gitpod:gitpod /var/log/php7.4-fpm.log
