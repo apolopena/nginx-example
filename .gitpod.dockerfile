@@ -10,4 +10,5 @@ USER gitpod
 
 RUN sudo apt-get update \
  && sudo apt-get -y install php7.4-fpm \
- && sudo apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
+ && sudo apt-get clean 
+ #&& rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
